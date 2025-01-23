@@ -1,0 +1,245 @@
+:root {
+  --color-beige: rgb(163, 148, 152);
+  --color-dark-beige: rgb(123, 148, 165);
+  --bg-primary: rgb(255, 255, 255);
+  --bg-secondary: black;
+  --bg-greige: rgb(138, 125, 129);
+}
+* {
+  margin: 0;
+  padding: 0;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  box-sizing: border-box;
+  list-style: none;
+}
+body {
+  background-color: var(--bg-primary);
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  flex: 1;
+}
+nav {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 10px 5%;
+}
+.logo {
+  color: var(--color-beige);
+  transition: color 0.7s ease-in-out;
+  font-size: 22px;
+}
+.logo:hover {
+  color: black;
+}
+nav ul li {
+  display: inline-block;
+  margin: 10px 25px;
+}
+nav ul li a {
+  color: var(--color-beige);
+  text-decoration: none;
+  font-weight: 700;
+  box-shadow: inset 0 0 0 0 rgb(138, 135, 135);
+  margin: 0 -0.25rem;
+  padding: 0 0.25;
+  transition: color 0.5s ease-in-out, box-shadow 0.5s ease-in-out;
+}
+nav ul li a:hover {
+  box-shadow: inset 200px 0 0 0 rgb(187, 162, 162);
+  color: white;
+}
+
+.headertext {
+  transition: color 0.7s ease-in-out;
+  font-size: 30px;
+  font-weight: 500;
+}
+.headertext:hover {
+  color: black;
+}
+
+.top {
+  text-align: center;
+  color: var(--color-beige);
+  max-width: 900px;
+  min-width: 300px; 
+  width: 90vw; 
+  padding: 5rem 8rem 0rem 8rem;
+  margin: 0 auto;
+}
+
+@media (max-width: 750px) {
+.top {
+  padding: 5rem 5rem 2rem 5rem;
+}
+}
+@media (max-width: 600px) {
+.top {
+padding: 5rem 4rem 2rem 4rem;
+}
+}
+.image-grid {
+  display: grid;
+  gap: 2.5rem;
+  grid-template-columns: 1fr 1fr;
+  padding: 5rem;
+  padding-left: 3rem;
+  padding-right: 3rem;
+  width: min(95%, 70rem);
+  margin-inline: auto;
+  object-fit: cover;
+  position: relative;
+}
+.about,
+.contact {
+  display: flex;
+  transition: transform 0.2s;
+  position: relative;
+}
+.portfolio {
+  grid-row: span 2;
+  justify-self: right;
+  transition: transform 0.2s;
+  position: relative;
+}
+.about:hover,
+.contact:hover,
+.portfolio:hover {
+  transform: scale(1.1);
+}
+.grid-img {
+  border-radius: 10px;
+  width: 100%;
+  height: 100%;
+}
+.img-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 50px;
+  transition: opacity 0.7s ease-in-out;
+  opacity: 0;
+}
+.about:hover .img-text,
+.portfolio:hover .img-text,
+.contact:hover .img-text {
+  opacity: 1;
+}
+
+footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 150px;
+  background-color: var(--bg-greige);
+  margin-top: 50px;
+  color: white;
+  font-weight: 700;
+  font-size: 20px;
+}
+
+@media (max-width: 750px) {
+  .image-grid {
+    grid-template-columns: 1fr;
+    padding-left: 4rem;
+    padding-right: 4rem;
+    padding-top: 2rem;
+    
+  }
+  @media (max-width: 600px) {
+
+    .image-grid {
+      grid-template-columns: 1fr;
+      padding-left: 2rem;
+      padding-right: 2rem;
+      padding: 2rem;
+    }
+  }
+  .nav-links {
+    background-color: var(--bg-greige);
+    background-size: cover;
+    height: 100vh;
+    width: 100%;
+    max-width: 300px;
+    top: 0;
+    right: -300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    transition: 0.3s ease;
+    color: white;
+    position: fixed;
+    z-index: 500;
+  }
+  .nav-links.active {
+    right: 0;
+  }
+  .nav-links ul {
+    display: flex;
+    flex-direction: column;
+  }
+  .nav-links ul li {
+    margin: 25px;
+  }
+  .nav-links ul li a {
+    color: white;
+    font-size: 30px;
+  }
+
+  .container {
+    padding: 1rem;
+    background-color: var(--bg-greige);
+    display: flex;
+  }
+  .mobile-menu {
+    height: 50px;
+    width: 70px;
+    position: relative;
+    cursor: pointer;
+    z-index: 1000;
+  }
+  .mobile-menu span {
+    height: 6px;
+    width: 100%;
+    background-color: white;
+    border-radius: 30px;
+    position: absolute;
+    top: 20%;
+    transform: translate(-50%, -50%);
+    transition: 0.3s ease;
+    z-index: 100;
+    width: 50px;
+    left: 30px;
+  }
+  .mobile-menu span:nth-child(1) {
+    top: 45%;
+  }
+  .mobile-menu span:nth-child(3) {
+    top: 70%;
+  }
+
+  .mobile-menu.active span:nth-child(1) {
+    top: 45%;
+    transform: translate(-50%, -50%) rotate(45deg);
+  }
+  .mobile-menu.active span:nth-child(2) {
+    opacity: 0;
+  }
+  .mobile-menu.active span:nth-child(3) {
+    top: 35%;
+    transform: translate(-50%, 50%) rotate(-45deg);
+  }
+  .logo {
+    color: white;
+  }
+ 
+}
+
