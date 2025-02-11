@@ -1,45 +1,52 @@
 
-
 const mobileMenu = document.querySelector('.mobile-menu');
 const navLinks = document.querySelector('.nav-links');
 
-if (mobileMenu && navLinks) {
-  mobileMenu.addEventListener('click', () => {
-    console.log('Hamburgarmenyn klickad'); // Lägg till denna rad för felsökning
-    mobileMenu.classList.toggle('active');
-    navLinks.classList.toggle('active');
-    console.log('mobileMenu-klasser:', mobileMenu.classList);
-    console.log('navLinks-klasser:', navLinks.classList);
+mobileMenu.addEventListener('click', () => {
+  mobileMenu.classList.toggle('active');
+  navLinks.classList.toggle('active');
+});
+
+
+
+$(document).ready(function () {
+  $('.contact-form').submit(function (event) {
+    event.preventDefault();
+    let name = $('#usr').val();
+    let email = $('#email').val();
+    let message = $('#message').val();
+    let isValid = true;
+    if (name === '') {
+      $('.error-name').text('Please enter your name.');
+      isValid = false;
+    } else {
+      $('.error-name').text('');
+    }
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (email === '') {
+      $('.error-email').text('Please enter  your email address.');
+      isValid = false;
+    } else if (!emailPattern.test(email)) {
+      $('.error-email').text('Please enter a valid email address');
+      isValid = false;
+    } else {
+      $('.error-email').text('');
+    }
+    if (message === '') {
+      $('.error-message').text('Ops, you forgot to write something.');
+      isValid = false;
+    } else {
+      $('.error-message').text('');
+    }
+
+    if (isValid) {
+      $('.sent-ok').show();
+      setTimeout(() => {
+      $('.sent-ok').hide();
+        },5000);      
+      $('.contact-form')[0].reset();
+    }
+ 
   });
-} else {
-  console.error('Kan inte hitta .mobile-menu eller .nav-links');
-}
 
-
-const hasHover = window.matchMedia('(hover: hover)').matches;
-
-if (!hasHover) {
-document.addEventListener('scroll', () => {
-  console.log('Scroll event detected'); //funkar
-const images = document.querySelectorAll('.about, .portfolio, .contact')
-images.forEach(image => {
-  const rect = image.getBoundingClientRect();
-  console.log(`image position for' ${image.className}:`, rect); // funkar pos?
-  const windowHeight = window.innerHeight;
-  const windowCenter = windowHeight/2;
-  const imageCenter = rect.top + (rect.height / 2);
-  const imgText = image.querySelector('.img-text');
-  
-  
-  if (imageCenter >= windowCenter -100 && imageCenter <= windowCenter +100){
-    console.log(`Adding hover class to ${image.className}`);
-    image.classList.add('hover');
-    image.querySelector('.img-text').classList.add('hover');
-  }else{
-    console.log(`Removing hover class from ${image.className}`);
-    image.classList.remove('hover');
-    image.querySelector('.img-text').classList.remove('hover');
-  }
-  });
-})
-}
+});
