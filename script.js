@@ -50,3 +50,16 @@ $(document).ready(function () {
   });
 
 });
+
+function submitFunction() {
+let button = document.getElementById('submit').formAction;
+
+}
+
+const apiUrl = "https://api.quotable.io/random"
+async function getQuote(url){
+const response = fetch(url);
+let data = (await response).json;
+console.log(data);
+}
+getQuote(api_url);

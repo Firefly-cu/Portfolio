@@ -6,7 +6,7 @@
     <title>CK Portfolio</title>
     <link rel="stylesheet" href="styles.css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-  
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   </head>
   <body>
   
@@ -44,16 +44,30 @@
               <textarea id="message" placeholder= "Write a Message..."></textarea>
               <span class="error-message"></span>
               <div class ="sent-ok">Message sent!</div>
-              <button type="submit" class="submit-button">Submit</button>
+              <button type="submit" value="Send Email" class="submit-button" id="submit">Submit</button>
           </form>
-          <div class="contact-info"></div>
-      
-           
-              
+         
+              <div class="contact-info">
+         <div class="background-overlay"></div>
+                <h3 class="info-header">Other ways to connect</h3>
+                <div class="text field">
+                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat, quidem obcaecati corrupti ipsum amet quis saepe excepturi quisquam explicabo!</p>
+                  </div>
+                  <div>
+                  <p class="text info"><b>Name </b>Camilla Kihlström</p>
+                  <p class="text info"><b>Phone</b> 0734486513</p>
+                  <p class="text info"><b>Address </b>Jungfrudanden 64, 171 51 Solna</p>
+                </div>
+                <div class="icons">
+                  <i class="fa fa-linkedin-square" style="font-size:48px;color:rgb(138, 125, 129)"></i>  
+                  <i class="fa fa-envelope" style="font-size:48px;color:rgb(138, 125, 129)"></i>
+                </div>
+                </div>
+              </div>
             </div>     
          
         </div>  
-      </div>            
+                
           </main>
          <footer>Have a great day
       </footer>
