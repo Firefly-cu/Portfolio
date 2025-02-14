@@ -325,6 +325,7 @@ footer {
   overflow: hidden;
   background-color: white;
   z-index: 1;
+  margin-top: 2rem;
 }
 .contact-header {
   font-size: 30px;
@@ -488,7 +489,7 @@ textarea:focus {
   .container-about {
     flex-direction: column;
     flex: 1;
-    gap: 3rem;
+    gap: 2rem;
   }
   .abouttext {
     max-width: 100%;
@@ -500,7 +501,7 @@ textarea:focus {
   }
   .container-contact {
     grid-template-columns: 1fr;
-  
+
   }
   .contact-form {
     padding: 3rem 6rem 0rem;
@@ -550,7 +551,7 @@ textarea:focus {
   
   }
   main {
-    padding: 3rem 1rem;
+    padding: 4rem 1rem;
   }
 
   .contact-form {
