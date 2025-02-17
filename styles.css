@@ -1,7 +1,7 @@
 :root {
   --color-beige: rgb(138, 128, 131);
   --bg-primary: rgb(255, 255, 255);
-  --bg-secondary: black;
+  --bg-secondary: black; /*tanken var att skapa ett dark mode också, men har inte kommit dit*/ 
   --color-greine: #b5b9af;
 }
 * {
@@ -37,6 +37,8 @@ nav {
 }
 a {
   text-decoration: none;
+}
+a img {
   width: 100%;
 }
 nav ul li {
@@ -443,14 +445,13 @@ textarea:focus {
   display: flex;
   justify-content: center;
   padding: 3rem;
-  margin: 0rem 8rem;
 }
 .fa-linkedin-square {
-  margin: 0rem 2rem;
+  margin: 0 3rem;
   transition: transform 0.2s;
 }
 .fa-envelope {
-  margin: 0rem 2rem;
+  margin: 0 3rem;
   transition: transform 0.2s;
 }
 @media (hover: hover) {
