@@ -1,6 +1,5 @@
 :root {
   --color-beige: rgb(138, 128, 131);
-  --color-dark-beige: rgb(123, 148, 165);
   --bg-primary: rgb(255, 255, 255);
   --bg-secondary: black;
   --color-greine: #b5b9af;
@@ -38,6 +37,7 @@ nav {
 }
 a {
   text-decoration: none;
+  width: 100%;
 }
 nav ul li {
   display: inline-block;
@@ -68,7 +68,7 @@ main {
   width: 100%;
   margin-inline: auto;
   object-fit: cover;
-  position: relative; 
+  position: relative;
   justify-content: center;
   align-items: center;
 }
@@ -192,9 +192,9 @@ footer {
     background-size: cover;
     height: 100vh;
     width: 100%;
-    max-height: 0px; 
+    max-height: 0px;
     overflow: hidden;
-    left:0;
+    left: 0;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -206,7 +206,7 @@ footer {
   }
 
   .nav-links.active {
-     }
+  }
   .nav-links ul {
     display: flex;
     flex-direction: column;
@@ -262,7 +262,6 @@ footer {
   }
   .logo {
     color: white;
-  
   }
 
   .main {
@@ -372,7 +371,6 @@ textarea {
   height: 200px;
   resize: none;
   padding-top: 8px;
-
 }
 input::placeholder,
 textarea::placeholder {
@@ -444,7 +442,8 @@ textarea:focus {
 .icons {
   display: flex;
   justify-content: center;
-  padding: 4rem;
+  padding: 3rem;
+  margin: 0rem 8rem;
 }
 .fa-linkedin-square {
   margin: 0rem 2rem;
@@ -476,14 +475,14 @@ textarea:focus {
   color: white;
 }
 
+/* Media Queries */
+
 @media (max-width: 1200px) {
   .contact-form {
     padding: 3rem 3rem 0rem;
-     font-weight: bold;
-   }
+    font-weight: bold;
+  }
 }
-
-
 
 @media (max-width: 900px) {
   .container-about {
@@ -501,15 +500,14 @@ textarea:focus {
   }
   .container-contact {
     grid-template-columns: 1fr;
-
   }
   .contact-form {
     padding: 3rem 6rem 0rem;
-     font-weight: bold;
-   }
-   main { 
-    padding: 6rem 6rem;  
-}
+    font-weight: bold;
+  }
+  main {
+    padding: 6rem 6rem;
+  }
 }
 
 @media (max-width: 780px) {
@@ -518,10 +516,12 @@ textarea:focus {
   }
   .image-grid {
     grid-template-columns: 1fr;
+    margin: 2rem;
+    gap: 3.5rem;
   }
-  main { 
-    padding: 6rem 3rem;  
-}
+  main {
+    padding: 6rem 3rem;
+  }
 }
 @media (max-width: 750px) {
   .info {
@@ -529,11 +529,11 @@ textarea:focus {
   }
   .contact-form {
     padding: 3rem 4rem 0rem;
-     font-weight: bold;
-   }
-   main { 
-    padding: 6rem 3rem;  
-}
+    font-weight: bold;
+  }
+  main {
+    padding: 6rem 3rem;
+  }
 }
 
 @media (max-width: 700px) {
@@ -544,18 +544,21 @@ textarea:focus {
   .text {
     font-size: 16px;
   }
- 
 }
 @media (max-width: 500px) {
-  .container-contact {
-  
-  }
   main {
     padding: 4rem 1rem;
   }
-
   .contact-form {
-   padding: 3rem 1rem 0rem;
+    padding: 3rem 1rem 0rem;
     font-weight: bold;
+  }
+  .image-grid {
+    grid-template-columns: 1fr;
+    margin: 2rem;
+    gap: 2.5rem;
+  }
+  .text {
+    font-size: 14px;
   }
 }
